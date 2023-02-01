@@ -20,7 +20,7 @@ function* watcherSaga() {
 function* postElements(action) {
     try {
         yield axios.post('/api/element', {newElement: action.payload});
-        yield put({type: 'POST_ELEMENT'})
+        yield put({type: 'FETCH_ELEMENTS'})
     } catch (error) {
         console.log('WE HAVE AN ERROR IN postResponse', error);
     }
